@@ -1,0 +1,24 @@
+.login {
+	width: 100vw;
+	height: 100vh;
+	padding-top: 32px;
+	background: url('/login_bg.png');
+	background-size: 100% 100%;
+}
+
+.title {
+	margin-block: 32px;
+	align-items: center;
+	gap: 16px;
+
+	& h2 {
+		margin: 0;
+	}
+}
+
+.form {
+	width: 328px;
+	min-width: 280px;
+	max-width: 75vw;
+	padding-top: 16px;
+}

@@ -1,0 +1,65 @@
+#root,
+.ant-app {
+	min-height: 100vh;
+}
+
+.ant-app {
+	& > .ant-layout {
+		min-height: 100vh;
+	}
+}
+
+.ant-layout-header {
+	z-index: 999;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	border-bottom: 1px solid var(--ant-color-border);
+	backdrop-filter: blur(8px);
+}
+
+.ant-layout-sider {
+	padding-top: 64px;
+	height: 100%;
+	position: fixed !important;
+	top: 0;
+	left: 0;
+	background: transparent;
+	border-right: 1px solid var(--ant-color-border);
+}
+
+.sider-toggle-btn {
+	position: absolute;
+	border-radius: 50%;
+	right: calc(var(--ant-control-height-sm) / -2);
+	top: calc(12px + 64px);
+}
+
+.ant-layout-content {
+	padding: 32px;
+	transition: padding 0.2s ease 0s;
+
+	&[data-collapsed='true'] {
+		padding-inline-start: calc(32px + 80px);
+	}
+
+	&[data-collapsed='false'] {
+		padding-inline-start: calc(32px + 256px);
+	}
+}
+
+.app-logo {
+	height: 100%;
+	cursor: pointer;
+	gap: 12px;
+	align-items: center;
+
+	& img {
+		height: 100%;
+	}
+
+	& h4 {
+		margin: 0;
+	}
+}
