@@ -1,4 +1,5 @@
-import { Button, Layout } from 'antd';
+import { Layout } from 'antd';
+import Analysis from '../page/Analysis';
 
 type AppContentProps = {
 	collapsed?: boolean;
@@ -7,8 +8,7 @@ type AppContentProps = {
 export default function AppContent(props: AppContentProps) {
 	return (
 		<Layout.Content data-collapsed={props.collapsed}>
-			<Button>Hello World</Button>
-			<div style={{ height: '200vh' }}></div>
+			<Analysis />
 		</Layout.Content>
 	);
 }

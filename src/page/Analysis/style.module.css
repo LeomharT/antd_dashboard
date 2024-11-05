@@ -1,0 +1,36 @@
+.tip {
+	position: absolute;
+	right: 24px;
+	top: 18px;
+}
+
+.info {
+	justify-content: space-between;
+	gap: 12px;
+	flex-wrap: wrap;
+
+	& > div {
+		flex: 1;
+		flex-basis: 250px;
+
+		& :global(.ant-divider) {
+			margin-block: 12px;
+		}
+
+		& :global(.ant-card-body) {
+			padding-bottom: 12px;
+		}
+
+		& :global(.ant-statistic-content) {
+			font-size: 30px;
+		}
+	}
+}
+
+.online {
+	flex: 1;
+}
+
+.categories {
+	flex: 1;
+}

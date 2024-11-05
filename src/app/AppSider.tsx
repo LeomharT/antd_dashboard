@@ -1,7 +1,7 @@
 import {
 	AppstoreOutlined,
+	DashboardOutlined,
 	LeftOutlined,
-	MailOutlined,
 	RightOutlined,
 	SettingOutlined,
 } from '@ant-design/icons';
@@ -12,31 +12,23 @@ type AppSider = {
 	onToggle: () => void;
 };
 
-export default function AppSider(props: AppSider) {
-	type MenuItem = Required<MenuProps>['items'][number];
+type MenuItem = Required<MenuProps>['items'][number];
 
+export default function AppSider(props: AppSider) {
 	const items: MenuItem[] = [
 		{
-			key: 'sub1',
-			label: 'Navigation One',
-			icon: <MailOutlined />,
+			key: 'dashboard',
+			label: 'Dashboard',
+			icon: <DashboardOutlined />,
 			children: [
 				{
 					key: 'g1',
-					label: 'Item 1',
+					label: 'Charts',
 					type: 'group',
 					children: [
-						{ key: '1', label: 'Option 1' },
-						{ key: '2', label: 'Option 2' },
-					],
-				},
-				{
-					key: 'g2',
-					label: 'Item 2',
-					type: 'group',
-					children: [
-						{ key: '3', label: 'Option 3' },
-						{ key: '4', label: 'Option 4' },
+						{ key: 'analysis', label: 'Analysis' },
+						{ key: 'monitor', label: 'Monitor' },
+						{ key: 'wordspace', label: 'Workspace' },
 					],
 				},
 			],
@@ -88,7 +80,13 @@ export default function AppSider(props: AppSider) {
 				onClick={props.onToggle}
 				icon={props.collapsed ? <RightOutlined /> : <LeftOutlined />}
 			/>
-			<Menu mode='inline' items={items} style={{ background: 'transparent' }} />
+			<Menu
+				mode='inline'
+				items={items}
+				defaultOpenKeys={['dashboard']}
+				defaultSelectedKeys={['analysis']}
+				style={{ background: 'transparent' }}
+			/>
 		</Layout.Sider>
 	);
 }
