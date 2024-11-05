@@ -2,6 +2,8 @@ import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Flex, Form, Input, Tabs, Typography } from 'antd';
 import { useForm } from 'antd/es/form/Form';
 import classes from './style.module.css';
+import logoSVG from '/antd.svg';
+
 const { Text, Title } = Typography;
 
 export default function Login() {
@@ -22,7 +24,7 @@ export default function Login() {
 	return (
 		<Flex className={classes.login} vertical align='center'>
 			<Flex className={classes.title} align='center'>
-				<img width={44} height={44} src='/antd.svg' />
+				<img width={44} height={44} src={logoSVG} />
 				<Title level={2}>Antd Dashboard</Title>
 			</Flex>
 			<Text type='secondary'>ant desgin admin dashboard demo</Text>

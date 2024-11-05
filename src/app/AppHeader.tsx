@@ -2,6 +2,8 @@ import { blue } from '@ant-design/colors';
 import { LoginOutlined, MoonOutlined, SunOutlined, UserOutlined } from '@ant-design/icons';
 import { useLocalStorage } from '@mantine/hooks';
 import { Avatar, Button, Dropdown, Flex, Layout, Typography } from 'antd';
+import logoSVG from '/antd.svg';
+
 const { Title } = Typography;
 
 type AppHeaderProps = {
@@ -22,7 +24,7 @@ export default function AppHeader(props: AppHeaderProps) {
 				style={{ height: '100%', paddingBlock: '12px' }}
 			>
 				<Flex className='app-logo'>
-					<img src='/antd.svg' />
+					<img src={logoSVG} />
 					<Title level={5}>Antd Dashboard v1.0</Title>
 				</Flex>
 				<Flex align='center' gap={16}>
