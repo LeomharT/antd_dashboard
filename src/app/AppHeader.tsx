@@ -43,7 +43,7 @@ export default function AppHeader(props: AppHeaderProps) {
 									icon: <LoginOutlined />,
 									onClick: () => {
 										localStorage.clear();
-										window.location.href = '/';
+										window.location.reload();
 									},
 								},
 							],
