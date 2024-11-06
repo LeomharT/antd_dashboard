@@ -5,11 +5,7 @@ import logoSVG from '/antd.svg';
 
 const { Title } = Typography;
 
-type AppHeaderProps = {
-	onToggleTheme: () => void;
-};
-
-export default function AppHeader(props: AppHeaderProps) {
+export default function AppHeader() {
 	return (
 		<Layout.Header style={{ background: 'transparent' }}>
 			<Flex justify='space-between' style={{ height: '100%', paddingBlock: '12px' }}>

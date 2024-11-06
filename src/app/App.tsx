@@ -10,7 +10,7 @@ export default function App() {
 
 	const token = localStorage.getItem('token');
 
-	const [algorithm, setAlgorithm] = useLocalStorage<'light' | 'dark'>({
+	const [algorithm] = useLocalStorage<'light' | 'dark'>({
 		key: 'theme',
 		defaultValue: 'light',
 	});
@@ -28,11 +28,7 @@ export default function App() {
 				}}
 			>
 				<Layout>
-					<AppHeader
-						onToggleTheme={() => {
-							setAlgorithm((prev) => (prev === 'dark' ? 'light' : 'dark'));
-						}}
-					/>
+					<AppHeader />
 					<Layout hasSider style={{ paddingTop: 64, position: 'relative' }}>
 						<AppSider toggle={toggle} open={open} close={close} collapsed={opened} />
 						<AppContent collapsed={opened} />
