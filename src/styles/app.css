@@ -63,3 +63,9 @@
 		margin: 0;
 	}
 }
+
+@media screen and (max-width: 56.25em) {
+	.app-logo {
+		visibility: hidden;
+	}
+}

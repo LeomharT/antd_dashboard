@@ -9,7 +9,9 @@ import { Button, Layout, Menu, MenuProps } from 'antd';
 
 type AppSider = {
 	collapsed?: boolean;
-	onToggle: () => void;
+	open: () => void;
+	close: () => void;
+	toggle: () => void;
 };
 
 type MenuItem = Required<MenuProps>['items'][number];
@@ -69,6 +71,14 @@ export default function AppSider(props: AppSider) {
 	return (
 		<Layout.Sider
 			width={256}
+			breakpoint='lg'
+			onBreakpoint={(borken) => {
+				if (borken) {
+					props.open();
+				} else {
+					props.close();
+				}
+			}}
 			collapsible
 			trigger={null}
 			collapsed={props.collapsed}
@@ -77,7 +87,7 @@ export default function AppSider(props: AppSider) {
 			<Button
 				size='small'
 				className='sider-toggle-btn'
-				onClick={props.onToggle}
+				onClick={props.toggle}
 				icon={props.collapsed ? <RightOutlined /> : <LeftOutlined />}
 			/>
 			<Menu

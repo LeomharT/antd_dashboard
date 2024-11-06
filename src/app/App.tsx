@@ -15,7 +15,7 @@ export default function App() {
 		defaultValue: 'light',
 	});
 
-	const [opened, { toggle }] = useDisclosure();
+	const [opened, { open, close, toggle }] = useDisclosure();
 
 	if (!token) return <Login />;
 
@@ -34,7 +34,7 @@ export default function App() {
 						}}
 					/>
 					<Layout hasSider style={{ paddingTop: 64, position: 'relative' }}>
-						<AppSider onToggle={toggle} collapsed={opened} />
+						<AppSider toggle={toggle} open={open} close={close} collapsed={opened} />
 						<AppContent collapsed={opened} />
 					</Layout>
 				</Layout>
